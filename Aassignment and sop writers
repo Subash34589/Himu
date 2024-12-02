@@ -1,0 +1,36 @@
+import matplotlib.pyplot as plt
+import pandas as pd
+
+# Data for performance comparison
+data = {
+    "Database": ["MongoDB", "Cassandra", "CouchDB", "HBase", "SimpleDB"],
+    "Scalability": [9, 8, 7, 8, 6],
+    "Query_Time": [6, 7, 8, 7, 5],
+    "Consistency": [7, 6, 8, 8, 6],
+    "Overall_Performance": [8, 8, 7, 7, 5]
+}
+
+# Create a DataFrame
+df = pd.DataFrame(data)
+
+# Plotting Scalability Comparison
+plt.figure(figsize=(10, 6))
+plt.bar(df["Database"], df["Scalability"], color='skyblue', label="Scalability")
+plt.title("Scalability of NoSQL Databases")
+plt.xlabel("Database")
+plt.ylabel("Scalability Score")
+plt.legend()
+plt.show()
+
+# Plotting Query Time Comparison
+plt.figure(figsize=(10, 6))
+plt.bar(df["Database"], df["Query_Time"], color='orange', label="Query Time")
+plt.title("Query Time of NoSQL Databases")
+plt.xlabel("Database")
+plt.ylabel("Query Time Score")
+plt.legend()
+plt.show()
+
+# Overall Performance Summary Table
+print("Performance Summary Table")
+print(df)
